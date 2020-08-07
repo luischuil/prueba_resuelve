@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
-from .serializers import (PayRollTeamSerializer)
-
 from app.services.salary_service import SalaryService
 from app.settings import TEAM_RESUELVE
+from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+from .serializers import PayRollTeamSerializer
 
 
 @api_view(['POST'])
