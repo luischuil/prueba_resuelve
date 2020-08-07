@@ -2,9 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('ejemplo', views.ResuelveEjemploViewSet.as_view()),
-    #path('', include(router.urls)),
+    path('payroll_resuelve', views.payroll_resuelve, name='payroll_resuelve'),
+    path('payroll_teams', views.payroll_teams, name='payroll_teams'),
 ]
