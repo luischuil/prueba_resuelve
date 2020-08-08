@@ -22,9 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(l$@tgy5sfd&g=$+7%$%)1km&54ir6k(4(rd0rows7c#^gv@*n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOST = os.getenv('ALLOWED_HOST')
+ALLOWED_HOSTS = [ALLOWED_HOST]
 
 # Application definition
 
@@ -120,7 +121,5 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [        
-        'rest_framework.permissions.AllowAny',        
-    ]
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny', ]
 }

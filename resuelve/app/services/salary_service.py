@@ -30,15 +30,15 @@ class SalaryService:
                 team_score += player['goles']
         return team_score
 
-    def __get_team(self, team_name):
+    def __get_team_object(self, team_name):
         return next((team for team in self.__teams if team['equipo'] == team_name), None)
 
     def __get_team_rate(self, team):
-        team = self.__get_team(team)
+        team = self.__get_team_object(team)
         return team['porcentaje'] if team else 0
 
     def __get_player_goal(self, player):
-        team = self.__get_team(player['equipo'])
+        team = self.__get_team_object(player['equipo'])
         goal = next((goal for goal in team['objetivos'] if goal['nivel'] == player['nivel']), 0)
         return goal['goles']
 
