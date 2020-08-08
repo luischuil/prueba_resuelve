@@ -3,7 +3,7 @@ version: '3'
 services:
   web_django:
     build: .
-    command: python /code/resuelve/manage.py runserver 0.0.0.0:8000
+    command: bash -c "python /code/resuelve/manage.py migrate && python /code/resuelve/manage.py runserver 0.0.0.0:8000"
     environment:
       - DEBUG=False
       - ALLOWED_HOST=localhost
